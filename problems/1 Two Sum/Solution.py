@@ -4,11 +4,9 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         result = []
-        for index1, candidate1 in enumerate(nums):
-            for index2, candidate2 in enumerate(nums):
-                if index1 == index2:  # don't use the same number twice!
-                    continue
-                if not candidate1 + candidate2 == target:
+        for index1 in range(len(nums)):
+            for index2 in range(index1 + 1, len(nums)):
+                if not nums[index1] + nums[index2] == target:
                     continue
                 return [index1, index2]
 
